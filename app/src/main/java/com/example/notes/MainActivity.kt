@@ -1,5 +1,6 @@
 package com.example.notes
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -27,7 +28,9 @@ class MainActivity : AppCompatActivity() {
                 showAlertDialogg("Wrong password")
             }
             else{
-                showAlertDialogg("Correct password")
+                //showAlertDialogg("Correct password")
+                val intent = Intent(this, NotesListActivity::class.java)
+                startActivity(intent)
             }
         }
     }
