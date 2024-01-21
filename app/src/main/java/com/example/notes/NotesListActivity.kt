@@ -20,12 +20,12 @@ class NotesListActivity : AppCompatActivity(),NotesAdapter.OnItemClickListener {
         onClickListeners()
     }
  private fun init(){
-     if (NotesManager.getEditedNote().isNullOrEmpty()){
+     if (NotesManager.getEditedNoteList().isNullOrEmpty()){
          Log.e("NotesListActivity","no notes entered")
      }
      else{
          binding.notesRv.layoutManager = LinearLayoutManager(this)
-         binding.notesRv.adapter=NotesAdapter(NotesManager.getEditedNote() as MutableList<EditedNote?>,this)
+         binding.notesRv.adapter=NotesAdapter(NotesManager.getEditedNoteList() as MutableList<EditedNote?>,this)
          binding.notesRv.adapter?.notifyDataSetChanged()
      }
  }
@@ -38,6 +38,11 @@ class NotesListActivity : AppCompatActivity(),NotesAdapter.OnItemClickListener {
 
     override fun onItemClick(note: EditedNote?) {
      // Handle item click here
+        //set to manager and give intent to edit text
         Log.e("NotesListActivity", note?.title.toString())
+        NotesManager.setEditedNote(note)
+        val intent=Intent(this, EditNoteActivity::class.java)
+        startActivity(intent)
+
     }
 }

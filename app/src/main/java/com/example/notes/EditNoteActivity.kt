@@ -21,7 +21,7 @@ class EditNoteActivity : AppCompatActivity() {
     private fun onClickListerners() {
         binding.saveButton.setOnClickListener {
             var notesItem = EditedNote(binding.notesTitleTv.text.toString(), binding.notesDateTv.text.toString(),binding.notesDescTv.text.toString())
-            NotesManager.setEditedNote(notesItem)
+            NotesManager.setEditedNoteList(notesItem)
             val intent = Intent(this,NotesListActivity::class.java)
             startActivity(intent)
         }
@@ -35,5 +35,11 @@ class EditNoteActivity : AppCompatActivity() {
         toolbar.setNavigationOnClickListener {
             onBackPressed()
         }
+        binding.notesTitleTv.setText(NotesManager.getEditedNote()?.title.toString())
+        binding.notesDateTv.setText(NotesManager.getEditedNote()?.date.toString())
+        binding.notesDescTv.setText(NotesManager.getEditedNote()?.description.toString())
     }
+
+    //TODO: when we edit an existing note and click save, it gets added as a new note in RV -> this has to be rectified.
+    //one way I thought of was  to see if the exiting note has any change. If does not have,then the save button should be hidden.
 }
