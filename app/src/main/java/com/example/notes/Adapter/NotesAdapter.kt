@@ -62,7 +62,6 @@ class NotesAdapter(private val notesList : MutableList<EditedNote?>,
         notesList[position]?.date= updatedNote?.date.toString()
         notesList[position]?.title= updatedNote?.title.toString()
         notesList[position]?.description= updatedNote?.description.toString()
-
         notifyItemChanged(position)
     }
 }

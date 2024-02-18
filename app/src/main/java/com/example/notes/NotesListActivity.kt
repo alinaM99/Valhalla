@@ -35,6 +35,11 @@ class NotesListActivity : AppCompatActivity(),NotesAdapter.OnItemClickListener {
             val intent = Intent(this,EditNoteActivity::class.java)
             startActivity(intent)
         }
+
+        binding.logoutBtn.setOnClickListener{
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onItemClick(note: EditedNote?, position : Int) {
