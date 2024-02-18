@@ -12,6 +12,7 @@ import com.example.notes.model.EditedNote
 
 class NotesListActivity : AppCompatActivity(),NotesAdapter.OnItemClickListener {
     private lateinit var binding : ActivityNotesListBinding
+    lateinit var adapter: NotesAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=DataBindingUtil.setContentView(this,R.layout.activity_notes_list)
@@ -36,13 +37,20 @@ class NotesListActivity : AppCompatActivity(),NotesAdapter.OnItemClickListener {
         }
     }
 
-    override fun onItemClick(note: EditedNote?) {
+    override fun onItemClick(note: EditedNote?, position : Int) {
      // Handle item click here
         //set to manager and give intent to edit text
         Log.e("NotesListActivity", note?.title.toString())
         NotesManager.setEditedNote(note)
         val intent=Intent(this, EditNoteActivity::class.java)
+        intent.putExtra("position",position)
+        Log.e("logpos", position.toString())
         startActivity(intent)
 
+    }
+
+    fun updateExisitingNote(note : EditedNote?, position: Int){
+        adapter= NotesAdapter(NotesManager.getEditedNoteList() as MutableList<EditedNote?>,this)
+        adapter.updateNoteList(position,note)
     }
 }

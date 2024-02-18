@@ -14,7 +14,7 @@ class NotesAdapter(private val notesList : MutableList<EditedNote?>,
 ) : RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
 
     interface OnItemClickListener {
-        fun onItemClick(note: EditedNote?)
+        fun onItemClick(note: EditedNote?, position: Int)
     }
 
     override fun onCreateViewHolder(
@@ -46,7 +46,7 @@ class NotesAdapter(private val notesList : MutableList<EditedNote?>,
                 val position = adapterPosition
                 if (position != RecyclerView.NO_POSITION) {
                     val clickedNote = notesList[position]
-                    listener.onItemClick(clickedNote)
+                    listener.onItemClick(clickedNote,position)
                 }
             }
         }
@@ -56,5 +56,13 @@ class NotesAdapter(private val notesList : MutableList<EditedNote?>,
             date.text = note.date
             content.text = note.description
         }
+    }
+
+    fun updateNoteList(position: Int, updatedNote : EditedNote?){
+        notesList[position]?.date= updatedNote?.date.toString()
+        notesList[position]?.title= updatedNote?.title.toString()
+        notesList[position]?.description= updatedNote?.description.toString()
+
+        notifyItemChanged(position)
     }
 }
