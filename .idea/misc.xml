@@ -3,6 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/alina/AndroidStudioProjects/Notes Project/Notes/app/src/main/res/drawable/back_button.xml" value="0.1945" />
+        <entry key="..\:/Users/alina/AndroidStudioProjects/Notes Project/Notes/app/src/main/res/drawable/bg_curved_rectangle.xml" value="0.2265" />
+        <entry key="..\:/Users/alina/AndroidStudioProjects/Notes Project/Notes/app/src/main/res/drawable/edit_text_bg.xml" value="0.15" />
+        <entry key="..\:/Users/alina/AndroidStudioProjects/Notes Project/Notes/app/src/main/res/drawable/gradient_bg.xml" value="0.157" />
+        <entry key="..\:/Users/alina/AndroidStudioProjects/Notes Project/Notes/app/src/main/res/drawable/ic_dinosaur.xml" value="0.15" />
+        <entry key="..\:/Users/alina/AndroidStudioProjects/Notes Project/Notes/app/src/main/res/drawable/ic_safe_notes.xml" value="0.15" />
+        <entry key="..\:/Users/alina/AndroidStudioProjects/Notes Project/Notes/app/src/main/res/layout/activity_edit_note.xml" value="0.2" />
+        <entry key="..\:/Users/alina/AndroidStudioProjects/Notes Project/Notes/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/alina/AndroidStudioProjects/Notes Project/Notes/app/src/main/res/layout/activity_notes_list.xml" value="0.1" />
+        <entry key="..\:/Users/alina/AndroidStudioProjects/Notes Project/Notes/app/src/main/res/layout/notes_rv_list_item.xml" value="0.1" />
         <entry key="..\:/Users/alina/AndroidStudioProjects/Notes/app/src/main/res/drawable/gradient_bg.xml" value="0.152" />
         <entry key="..\:/Users/alina/AndroidStudioProjects/Notes/app/src/main/res/drawable/ic_go.xml" value="0.15" />
         <entry key="..\:/Users/alina/AndroidStudioProjects/Notes/app/src/main/res/drawable/ic_safe_notes.xml" value="0.1505" />
